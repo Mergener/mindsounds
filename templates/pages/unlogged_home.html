@@ -1,0 +1,14 @@
+{% extends "abstract/base.html" %}
+{% block content %}
+<h2 class="center">
+Welcome to Mindsounds.
+<br></br>
+Let the world know what you're thinking!
+<br></br>
+</h2>
+<br></br>
+<h3 class="center">
+<a href="{% url 'signup_view' %}">Create a free account now</a> or <a href="{% url 'login_view' %}">login</a>!
+</h3>
+
+{% endblock %}

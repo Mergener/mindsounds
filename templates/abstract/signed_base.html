@@ -1,0 +1,12 @@
+{% extends "abstract/base.html" %}
+{% load static %}
+
+{% if user.is_authenticated %}
+    {% block navbar %}
+        <a href="{% url 'base_view' %}">Home</a>
+        <a href="{% url 'logout_view' %}">Logout</a>
+    {% endblock %}
+{% else %}
+    <!-- If the user is not logged in, redirect. -->
+    <meta http-equiv="refresh" content="0;url={% url 'base_view' %}">
+{% endif %}

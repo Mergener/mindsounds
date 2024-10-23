@@ -7,6 +7,10 @@ h1 {
     margin-top: 50px;
 }
 
+.center {
+    text-align: center;
+}
+
 nav {
     text-align: center; 
     margin-top: 20px; 

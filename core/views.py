@@ -6,13 +6,13 @@ def base_view(request):
     # Check if the user is logged in.
     if request.user.is_authenticated:
         print("authenticated!")
-        return render(request, 'core/feed.html')
+        return render(request, 'pages/feed.html')
     else:
         print("not authenticated!")
         return unlogged_home(request)
 
 def unlogged_home(request):
-    return render(request, 'unlogged_home.html')
+    return render(request, 'pages/unlogged_home.html')
 
 def feed_view(request):
     pass
@@ -27,7 +27,7 @@ def signup_view(request):
     else:
         form = SignupForm()
 
-    return render(request, 'core/signup.html', {'form': form})
+    return render(request, 'pages/signup.html', {'form': form})
 
 def login_view(request):
     wrongCredentials = False
@@ -43,7 +43,7 @@ def login_view(request):
     else:
         form = LoginForm()
 
-    return render(request, 'core/login.html', {'wrongCredentials': wrongCredentials, 'form': form})
+    return render(request, 'pages/login.html', {'wrongCredentials': wrongCredentials, 'form': form})
 
 def logout_view(request):
     logout(request)

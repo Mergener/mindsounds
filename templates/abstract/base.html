@@ -8,9 +8,16 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-    <button type="submit">Sign up</button>
+    <h1>Mindsounds</h1>
+    <nav>
+        {% block navbar %}
+        {% endblock %}
+    </nav>
+
+    <br></br>
+
+    {% block content %}
+
+    {% endblock %}
 </body>
 </html>
