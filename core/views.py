@@ -9,13 +9,10 @@ def base_view(request):
         return render(request, 'pages/feed.html')
     else:
         print("not authenticated!")
-        return unlogged_home(request)
+        return unsigned_home(request)
 
-def unlogged_home(request):
-    return render(request, 'pages/unlogged_home.html')
-
-def feed_view(request):
-    pass
+def unsigned_home(request):
+    return render(request, 'pages/unsigned_home.html')
 
 def signup_view(request):
     if request.method == 'POST':

@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <h1>Mindsounds</h1>
+    <h1>
+        <a href="{% url 'base_view' %}" class="no-link">Mindsounds</a>
+    </h1>
     <nav>
         {% block navbar %}
         {% endblock %}

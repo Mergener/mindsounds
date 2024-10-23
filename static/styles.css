@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    font-size: large;
 }
 
 h1 {
@@ -9,6 +10,10 @@ h1 {
 
 .center {
     text-align: center;
+}
+
+.no-link {
+    text-decoration: none;
 }
 
 nav {

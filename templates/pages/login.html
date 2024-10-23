@@ -3,12 +3,19 @@
 {% block content %}
 
 {% if wrongCredentials %}
-    <p>Invalid username or password.</p>
+    <div class="center">
+        <h3>
+            <p>Invalid username or password.</p>
+        </h3>
+    </div>  
 {% endif %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-<button type="submit">Login</button>
+<div class="center">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">Login</button>
+    </form>
+</div>
 
 {% endblock %}

@@ -3,7 +3,7 @@
 
 {% if user.is_authenticated %}
     {% block navbar %}
-        <a href="{% url 'base_view' %}">Home</a>
+        <a href="{% url 'base_view' %}">My Profile</a>
         <a href="{% url 'logout_view' %}">Logout</a>
     {% endblock %}
 {% else %}
