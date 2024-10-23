@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindsounds</title>
+    <link rel="stylesheet" type="text/css" href="unlogged_home.css">
+</head>
+<body>
+    Welcome to Mindsounds!
+    <br></br>
+    Start sharing your thoughts now!
+    <br></br>
+    <!-- Our signup form with name, email, password and confirm password -->
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">Sign up</button>
+    
+    
+    <br></br>
+    Already has an account? <a href="{% url 'login_view' %}">Log in</a> now!
+</body>
+</html>
