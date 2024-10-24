@@ -1,0 +1,18 @@
+<div class="post-view">
+  <div class="post-content">
+    <div class="post-date">
+      at {{ post.created_at }}
+    </div>
+    <strong>
+    {{ post.author.profile.display_name }}:<br />
+    </strong>
+
+    {{ post.content }}
+
+    {% if post.author == request.user %}
+    <br />
+    <a href="{% url 'delete_post' post.id %}" class='delete-post'>Delete</a>
+    {% endif %}
+  </div>
+  <p />
+</div>

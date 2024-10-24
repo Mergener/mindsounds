@@ -8,12 +8,24 @@ h1 {
     margin-top: 50px;
 }
 
+.feed {
+    text-align: center;
+}
+
 .center {
     text-align: center;
 }
 
 .no-link {
     text-decoration: none;
+}
+
+.delete-post {
+    font-size: small
+}
+
+.post-date {
+    font-size: x-small;
 }
 
 nav {

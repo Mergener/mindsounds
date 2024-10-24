@@ -1,0 +1,16 @@
+{% extends "abstract/signed_base.html" %}
+
+{% block content %}
+<div class='center'>
+Hello, {{ profile.display_name }}!
+
+<p />
+
+{% include 'widgets/post_form.html' %}
+</div>
+
+<br />
+
+{% include 'widgets/feed.html' with posts=posts %}
+
+{% endblock %}

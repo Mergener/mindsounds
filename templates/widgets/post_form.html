@@ -1,0 +1,7 @@
+<div class='create-post'>
+    <form action='{% url 'posts' %}' method='post'>
+        {% csrf_token %}
+        <textarea name='content' placeholder='Share a thought...'></textarea>
+        <input type='submit' value='Post'>
+    </form>
+</div>
