@@ -7,11 +7,11 @@
     <title>Mindsounds</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
-<body>
+<body class='page-bg'>
     <h1>
-        <a href="{% url 'home' %}" class="no-link">Mindsounds</a>
+        <a href="{% url 'home' %}" class="logo">Mindsounds</a>
     </h1>
-    <nav>
+    <nav class='navbar'>
         {% block navbar %}
         {% endblock %}
     </nav>

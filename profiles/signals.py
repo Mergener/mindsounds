@@ -8,7 +8,7 @@ from datetime import datetime
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         print(instance.username)
-        Profile.objects.create(user=instance, display_name=instance.username, bio='I love Mindsounds!', join_date=datetime.now())
+        Profile.objects.create(user=instance, bio='This user likes to keep some mistery about themselves.', join_date=datetime.now())
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):

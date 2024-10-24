@@ -4,7 +4,7 @@
       at {{ post.created_at }}
     </div>
     <strong>
-    {{ post.author.profile.display_name }}:<br />
+    {% include 'widgets/mention.html' with mention=post.author.username %}:<br />
     </strong>
 
     {{ post.content }}
