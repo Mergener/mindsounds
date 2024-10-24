@@ -1,0 +1,5 @@
+Django==5.1
+django-binary-database-files==1.0.18
+asgiref==3.8.1
+sqlparse==0.5.1
+tzdata==2024.1
