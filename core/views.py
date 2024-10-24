@@ -3,6 +3,7 @@ from django.contrib.auth import login, logout, authenticate
 from .forms import SignupForm, LoginForm
 from profiles.models import Profile, Follower
 from posts.models import Post
+from django.contrib.auth.decorators import login_required
 
 def _get_posts_from_following(user):
     following = Follower.objects.filter(follower=user)
@@ -52,6 +53,7 @@ def login_view(request):
 
     return render(request, 'pages/login.html', {'wrongCredentials': wrongCredentials, 'form': form})
 
+@login_required
 def logout_view(request):
     logout(request)
     return redirect('home', permanent=True)

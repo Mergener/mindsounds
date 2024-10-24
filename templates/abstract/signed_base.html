@@ -3,8 +3,13 @@
 
 {% if user.is_authenticated %}
     {% block navbar %}
-        <a href="{% url 'home' %}">My Profile</a>
+        <a href="{% url 'profile_view' user.username %}">My Profile</a>
         <a href="{% url 'logout_view' %}">Logout</a>
+
+        <form action="{% url 'profile_search_results_view' 'query' %}" method="get">
+            <input type="text" name="query" placeholder="Search profiles..." required>
+            <button type="submit">Search</button>
+        </form>
     {% endblock %}
 {% else %}
     <!-- If the user is not logged in, redirect. -->

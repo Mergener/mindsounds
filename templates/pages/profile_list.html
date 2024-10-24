@@ -1,0 +1,12 @@
+{% extends "abstract/signed_base.html" %} 
+{% block content %} 
+    {% if profiles %}
+        {% for profile in profiles %} 
+            {% include 'widgets/mini_profile.html' with profile=profile %} 
+        {% endfor %} 
+    {% else %}
+        <div class="center">
+            <h2>No profiles found.</h2>
+        </div>
+    {% endif %} 
+{% endblock %}
