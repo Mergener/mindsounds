@@ -1,16 +1,27 @@
 {% extends "abstract/signed_base.html" %} {% block content %}
 
 <div class="center">
-  <h2>{{ profile.display_name }}</h2>
+  <h2>{% include 'widgets/mention.html' with mention=profile.user.username %}</h4>
+  <h6><a href="{% url 'followers_view' profile.user.username %}">Followers: {{ profile.user.followers.count }}</a></h6>
+  <h6><a href="{% url 'following_view' profile.user.username %}">Following: {{ profile.user.following.count }}</a></h6>
   <p />
-  <h3>{{ profile.bio }}</h3>
+
+  <h4>About {{ profile.user.username }}: {{ profile.bio }}</h4>
   <p />
-  <h3>Joined Mindsounds at {{ profile.join_date }}</h3>
+  <h5>{{ profile.user.username }} has joined Mindsounds at {{ profile.join_date }}</h3>
   <p />
 
   {% if profile.user != user %}
-    <a href="{% url 'follow_view' profile.user.username %}">Follow</a>
+    {% if is_following %}
+      <a href="{% url 'unfollow' profile.user.username %}">Unfollow</a>
+    {% else %}
+      <a href="{% url 'follow' profile.user.username %}">Follow</a>
+    {% endif %}
   {% endif %}
+
+  <br />
+  
+  <h4> Recent posts by {{ profile.user.username }}: </h4>
 </div>
 
 {% include 'widgets/feed.html' with posts=posts %} 
