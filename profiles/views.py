@@ -61,3 +61,13 @@ def following_view(request, username):
     following = Follower.objects.filter(follower=profile.user)
     profiles = [follow.user.profile for follow in following]
     return render(request, 'pages/profile_list.html', {'profiles': profiles})
+
+@login_required
+def update_bio_view(request, username):
+    user = User.objects.get(username=username)
+    profile = Profile.objects.get(user=user)
+    if request.method == 'POST':
+        profile.bio = request.POST.get('bio')
+        profile.save()
+        return redirect('profile_view', username=username)
+    return render(request, 'pages/update_bio.html', {'profile': profile})

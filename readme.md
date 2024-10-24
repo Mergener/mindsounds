@@ -33,6 +33,8 @@ Uma vez que o banco de dados foi criado, você pode rodar o servidor de desenvol
 python manage.py runserver
 ```
 
+OBS: O servidor só rodará em modo DEBUG se a variável de ambiente DEBUG estiver definida como True.
+
 ## Gerando container Docker
 
 Para gerar um container Docker, é necessário ter o Docker instalado. Com o Docker instalado, basta rodar o seguinte comando:

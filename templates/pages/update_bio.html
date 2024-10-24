@@ -1,0 +1,15 @@
+{% extends "abstract/signed_base.html" %}
+{% block content %}
+
+<div class='center'>
+    <h2>Update Bio</h2>
+    <form method='post'>
+        {% csrf_token %}
+        <textarea name='bio' rows='5' cols='50'>{{ profile.bio }}</textarea>
+        <br />
+        <input type='submit' value='Update' />
+        <input type='button' value='Cancel' onclick='location.href="{% url "profile_view" profile.user.username %}"' />
+    </form>
+</div>
+
+{% endblock %}
