@@ -1,5 +1,17 @@
 Mindsounds é um pequeno clone de Twitter desenvolvido com Django para a disciplina INF1407 (Programação para Web) da PUC-Rio.
 
+## Funcionalidades
+
+- Cadastro de usuários
+- Login de usuários
+- Postagem de mensagens
+- Remoção de mensagens
+- Seguir usuários
+- Deixar de seguir usuários
+- Feed de mensagens dos usuários seguidos
+- Busca de usuários
+- Listagem de seguidores e seguidos
+
 ## Pré-requisitos
 
 - Python 3.12 ou superior
